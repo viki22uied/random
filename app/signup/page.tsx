@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { User, Mail, Lock, Building, AlertCircle, ArrowLeft, MapPin } from "lucide-react"
 import { supabase } from "@/lib/hdims-supabase"
 
-export default function SignUpPage() {
+function SignUpContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [isLoading, setIsLoading] = useState(false)
@@ -341,4 +341,29 @@ export default function SignUpPage() {
       </div>
     </div>
   )
+}
+
+export default function SignUpPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
+          <p className="mt-2 text-muted-foreground">Loading...</p>
+        </div>
+      </div>
+    }>
+      <SignUpContent />
+    </Suspense>
+  )
+}
+
+export const metadata = {
+  title: 'Sign Up - HDIMS',
+  description: 'Create your HDIMS account to access the healthcare data management system',
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }

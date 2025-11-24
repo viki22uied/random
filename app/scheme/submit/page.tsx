@@ -30,3 +30,13 @@ export default function SubmitSchemePage() {
     </ProtectedRoute>
   )
 }
+
+export const metadata = {
+  title: 'Submit Scheme - HDIMS',
+  description: 'Submit scheme tracking data for healthcare programs',
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}

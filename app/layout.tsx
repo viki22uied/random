@@ -44,11 +44,15 @@ export const metadata = {
   generator: 'v0.app',
   keywords: ['healthcare', 'data management', 'reporting', 'HDIMS'],
   authors: [{ name: 'HDIMS Team' }],
-  viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   openGraph: {
     title: 'HDIMS - Healthcare Data Management System',
     description: 'Comprehensive healthcare data management and reporting system',
     type: 'website',
   },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
