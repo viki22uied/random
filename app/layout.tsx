@@ -39,5 +39,16 @@ export default function RootLayout({
 }
 
 export const metadata = {
-      generator: 'v0.app'
-    };
+  title: 'HDIMS - Healthcare Data Management System',
+  description: 'Comprehensive healthcare data management and reporting system',
+  generator: 'v0.app',
+  keywords: ['healthcare', 'data management', 'reporting', 'HDIMS'],
+  authors: [{ name: 'HDIMS Team' }],
+  viewport: 'width=device-width, initial-scale=1',
+  robots: 'index, follow',
+  openGraph: {
+    title: 'HDIMS - Healthcare Data Management System',
+    description: 'Comprehensive healthcare data management and reporting system',
+    type: 'website',
+  },
+};
