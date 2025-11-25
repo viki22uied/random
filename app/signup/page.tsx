@@ -34,6 +34,10 @@ function SignUpContent() {
     }
   }, [searchParams])
 
+  useEffect(() => {
+    document.title = 'Sign Up - HDIMS'
+  }, [])
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
@@ -358,12 +362,3 @@ export default function SignUpPage() {
   )
 }
 
-export const metadata = {
-  title: 'Sign Up - HDIMS',
-  description: 'Create your HDIMS account to access the healthcare data management system',
-}
-
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-}

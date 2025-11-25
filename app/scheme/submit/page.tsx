@@ -21,6 +21,10 @@ export default function SubmitSchemePage() {
     return null
   }
 
+  useEffect(() => {
+    document.title = 'Submit Scheme - HDIMS'
+  }, [])
+
   return (
     <ProtectedRoute allowedRoles={["hospital"]}>
       <div className="flex h-screen bg-background">
@@ -29,14 +33,4 @@ export default function SubmitSchemePage() {
       </div>
     </ProtectedRoute>
   )
-}
-
-export const metadata = {
-  title: 'Submit Scheme - HDIMS',
-  description: 'Submit scheme tracking data for healthcare programs',
-}
-
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
 }
